@@ -51,7 +51,7 @@ function cryptoSquare(input) {
   console.log(`The dimension of your square should be: ${dimension} x ${dimension}`);
   
   for(let i = 0; i < dimension; i++) {
-    output.push(input[0]);
+    output.push([input[0]]);
     input = input.slice(1);
   }
 
@@ -59,7 +59,8 @@ function cryptoSquare(input) {
   console.log(`After the first loop, the remaining value of input is: ${input}`);
 
   for(let j = 0; j < dimension; j++) {
-      output[j].push(input[0]);
+    console.log(input[0]);
+      output[j].push([input[0]]);
       input = input.slice(1);
       // if (j = (dimension - 1)) {
       //   j = 0;
