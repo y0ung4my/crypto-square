@@ -53,27 +53,32 @@ function cryptoSquare(input) {
   for(let i = 0; i < dimension; i++) {
     output.push([input[0]]);
     input = input.slice(1);
+    if (i = 2) {
+      i = 0;
+    } else {
+      break;
+    }
   }
 
   // console.log(`After the first loop, the value of output is: ${output}`);
   // console.log(`After the first loop, the remaining value of input is: ${input}`);
 
-  for(let j = 0; j < dimension; j++) {
-      output[j].push([input[0]]);
-      input = input.slice(1);
-  }
+  // for(let j = 0; j < dimension; j++) {
+  //     output[j].push([input[0]]);
+  //     input = input.slice(1);
+  // }
 
-  // console.log(`After the second loop, the value of output is: ${output}`);
+  console.log(`After loop, output is: ${output}`);
 
-  for(let k = 0; k < dimension; k++) {
-    output[k].push([input[0]]);
-    input = input.slice(1);
-  }
+  // for(let k = 0; k < dimension; k++) {
+  //   output[k].push([input[0]]);
+  //   input = input.slice(1);
+  // }
 
   return output;
 }
 
-// cryptoSquare('abc def ghi');
+cryptoSquare('abc def ghi');
 
 //UI Logic
 $(document).ready(function() {
