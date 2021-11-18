@@ -55,7 +55,7 @@ function cryptoSquare(input) {
   console.log(`After the first loop, the value of output is: ${output}`);
   console.log(`After the first loop, the remaining value of input is: ${input}`);
 
-  for(let j = 0; j <= dimension; j++) {
+  for(let j = 0; j < dimension; j++) {
       output[j].push([input[0]]);
       input = input.slice(1);
   }
