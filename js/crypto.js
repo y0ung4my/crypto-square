@@ -29,6 +29,9 @@ doesn't fit neatly into a square, choose the number of columns that corresponds
 to the smallest square that is larger than the number of characters in the message.
 */
 
+//THIS CODE IS NOT MINE - PHIL CURRAN WROTE IT!
+
+//Business Logic
 function cryptoSquare(input) {
 
   let output = [];
@@ -45,29 +48,38 @@ function cryptoSquare(input) {
 
   let dimension = Math.ceil(Math.sqrt(input.length));
 
-  console.log(`The dimension of your square should be: ${dimension} x ${dimension}`);
+  // console.log(`The dimension of your square should be: ${dimension} x ${dimension}`);
   
   for(let i = 0; i < dimension; i++) {
     output.push([input[0]]);
     input = input.slice(1);
   }
 
-  console.log(`After the first loop, the value of output is: ${output}`);
-  console.log(`After the first loop, the remaining value of input is: ${input}`);
+  // console.log(`After the first loop, the value of output is: ${output}`);
+  // console.log(`After the first loop, the remaining value of input is: ${input}`);
 
   for(let j = 0; j < dimension; j++) {
       output[j].push([input[0]]);
       input = input.slice(1);
   }
 
-  console.log(`After the second loop, the value of output is: ${output}`);
+  // console.log(`After the second loop, the value of output is: ${output}`);
 
   for(let k = 0; k < dimension; k++) {
     output[k].push([input[0]]);
     input = input.slice(1);
   }
 
-  console.log(output);
+  return output;
 }
 
-cryptoSquare('abc def ghi');
+// cryptoSquare('abc def ghi');
+
+//UI Logic
+$(document).ready(function() {
+  $("form#crypto-square").submit(function(event){
+    event.preventDefault();
+    const passage = $("#text-passage").val();
+    $("#square").html(cryptoSquare(passage));
+  });
+});
