@@ -48,37 +48,38 @@ function cryptoSquare(input) {
 
   let dimension = Math.ceil(Math.sqrt(input.length));
 
-  // console.log(`The dimension of your square should be: ${dimension} x ${dimension}`);
+  console.log(`The dimension of your square should be: ${dimension} x ${dimension}`);
   
   for(let i = 0; i < dimension; i++) {
-    output.push([input[0]]);
+    output.push(input[0]);
     input = input.slice(1);
-    if (i = 2) {
-      i = 0;
-    } else {
-      break;
-    }
   }
 
-  // console.log(`After the first loop, the value of output is: ${output}`);
-  // console.log(`After the first loop, the remaining value of input is: ${input}`);
+  console.log(`After the first loop, the value of output is: ${output}`);
+  console.log(`After the first loop, the remaining value of input is: ${input}`);
 
-  // for(let j = 0; j < dimension; j++) {
-  //     output[j].push([input[0]]);
-  //     input = input.slice(1);
-  // }
+  for(let j = 0; j < dimension; j++) {
+      output[j].push(input[0]);
+      input = input.slice(1);
+      // if (j = (dimension - 1)) {
+      //   j = 0;
+      // }
+      // if (input[0] === undefined) {
+      //   break;
+      // }
+  }
 
-  console.log(`After loop, output is: ${output}`);
+  // console.log(`After the second loop, the value of output is: ${output}`);
 
-  // for(let k = 0; k < dimension; k++) {
-  //   output[k].push([input[0]]);
-  //   input = input.slice(1);
-  // }
+  for(let k = 0; k < dimension; k++) {
+    output[k].push(input[0]);
+    input = input.slice(1);
+  }
 
   return output;
 }
 
-cryptoSquare('abc def ghi');
+console.log(cryptoSquare('abc def ghi'));
 
 //UI Logic
 $(document).ready(function() {
